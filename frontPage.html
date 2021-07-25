@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="http://cdn.webix.com/edge/webix.css" type="text/css" charset="utf-8">
+        <script src="http://cdn.webix.com/edge/webix.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <style>
+        body {
+            background-image: url("arbysBackground.jpg"); 
+            background-position: center; 
+            background-size: cover
+             }
+        img{
+                display: block; 
+                margin-left: auto;
+                margin-right: auto; 
+                width: auto; 
+                height: auto; 
+            }
+        img.animated-gif{
+            width: 600px; 
+            height: 400px
+        }
+    </style>
+    <body>
+        <script type="text/javascript" charset="utf-8">
+        var image = "<img class='animated-gif' src = 'arbys.gif' alt = 'Arbys Photo'><img>" 
+            // ...the code of your app
+         webix.ready(function(){
+               
+               webix.ui({
+                 rows:[
+                    
+                     {}, 
+                     {  //type: "space", 
+                        cols: [
+                            {}, 
+                            {   type: "space", 
+                                rows: 
+                                [
+                                    {template: image},  
+                                
+                                     
+                                ]
+                            }, 
+                            {   type: "space", 
+                                rows: 
+                                [
+                                  {template: "<center><h1>What would you like to do today?<h1><center>"}, 
+                                  {view: "button", id: 1, value: "Calculate Inventory", click: calculate}, 
+                                  {view: "button", id: 2, value: "Change Inventory", click: change},  
+                                  {view: "button", id: 3, value: "View Inventory Log", click: log}, 
+                                  {type: "space"}
+                                ]
+                            },  
+                            {}
+                        
+                        
+                        ]
+                     }, 
+                     {}
+                 ]
+               });
+         });
+
+         function calculate(){
+            window.open('C:/Users/jacob/OneDrive/Desktop/Arbys%20Website/calculatePage.html')
+         }
+
+         function change(){
+
+         }
+
+         function log(){
+
+         }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="http://cdn.webix.com/edge/webix.css" type="text/css" charset="utf-8">
+        <script src="http://cdn.webix.com/edge/webix.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <style>
+       body{
+        background-color: rgba(255, 0, 0, 0.637);
+       }
+    </style>
+    <body>
+        <script type="text/javascript" charset="utf-8">
+        var jsonString = JSON.stringify([
+    { id : 1, "item" : "ChickenBreast", "Case": "", "Bag": "", "Individual" : ""},
+
+    { id : 2, "item" : "Subroll", "Case": "", "Bag": "", "Individual" : ""}, 
+
+    { id : 3, "item" : "MiniBuns", "Case": "", "Bag": "", "Individual" : ""}, 
+
+    { id : 4, "item" : "Starbuns", "Case": "", "Bag" : "", "Individual" : ""},
+    
+    { id : 5, "item": "JalapenoPoppers",  "Case": "", "Bag": "", "Individual" : ""}, 
+
+    { id : 6, "item": "MozzarellaSticks", "Case": "", "Bag": "", "Individual" : ""}, 
+
+    { id : 7, "item" : "CherryTurnover", "Case": "", "Bag": "", "Individual" : ""}, 
+
+    { id : 8, "item": "AppleTurnover", "Case": "","Bag": "", "Individual" : ""}, 
+
+    { id : 9, "item" : "SaltyChocolateCookie", "Case" : "", "Individual" : ""}, 
+
+    { id : 10, "item": "MarbleRye", "Case": "", "Bag": "", "Individual" : ""}, 
+
+    { id : 11, "item" : "ChickenFingers", "Case" : "", "Bag": "", "Individual" : ""}, 
+
+    { id : 12, "item" : "GreekGyro", "Case": "", "Bag": "", "Individual" : ""},
+
+    { id : 13, "item" : "CurlyFries", "Case": "", "Bag": "", "Individual" : ""}, 
+
+    ]); 
+        var data = JSON.parse(jsonString);
+        var Items = ["ChickenBreast", "Subroll", "MiniBuns", "Starbuns", "JalapenoPoppers", "MozzarellaSticks", "CherryTurnover", "AppleTurnover", "SaltyChocolateCookie", "MarbleRye", "ChickenFingers", "GreekGyro", "CurlyFries"]; 
+        var Case = ["Case"]; 
+        var Bag = [];
+        /*
+        var _columns = [
+            {id: "Item", header: "Item", width: 300, fillspace: true}, 
+            {id: "Case", header: "Case", width: 100}, 
+            {id: "Bag", header: "Bag", width: 100}, 
+            {id: "Individual", header: "Individual", width: 100}
+        ] */
+
+
+            // ...the code of your app
+         webix.ready(function(){
+               
+               webix.ui({
+                   rows: [
+                       {}, 
+                       {
+                          cols: [
+                              {}, 
+                              {
+                                  view: "datatable",
+                                  css: "webix_data_border webix_header_border", 
+                                  width: 620, 
+                                  height: 800,  
+                                  autoConfig: true, 
+                                  select: true,
+                                  editable: true, 
+                                  data: jsonString
+                              }, 
+                              {}
+                          ]
+
+                       }, 
+                       { cols:[
+                           {}, 
+                           {view: "button", id: 1, value:"Save", width: 100, click: save}, 
+                           {view: "button", id: 2, value: "Clear", width: 100, click: clear}, 
+                           {}
+                       ]
+                        
+                       }, 
+                       {}
+                   ]
+               });
+         });
+         
+         function save(){
+
+         }
+
+         function clear(){
+            
+         }
+        </script>
+    </body>
+</html>
